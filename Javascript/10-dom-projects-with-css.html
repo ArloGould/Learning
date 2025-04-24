@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM Projects With CSS
+    </title>
+    <style>
+      .subscribe-button {
+        background-color: black;
+        color: white;
+        height: 35px;
+        border-radius: 30px;
+        width: 90px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      
+      body{
+        font-family: Arial;
+      }
+      .calculate-button {
+        background-color: green;
+        color: white;
+        padding: 13px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .cost-input{
+        height: 36px
+
+      }
+      .clicked {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      YouTube Subscribe Button
+    </p>
+    <button class="js-subscribe-button subscribe-button"
+    onclick="
+    
+    Subscribe()
+    
+    ">
+    Subscribe
+    </button>
+    <p> Amazon Shipping Calculator</p>
+    <p> Orders under $40 = +$10 Shipping</p>
+    <p> Orders over $40 = FREE Shipping</p>
+    <input class="js-cost-input cost-input" 
+    placeholder="Cost of Order" 
+    onkeydown="handleCostKeyDown(event)">
+    <button class="calculate-button" onclick="
+    calculateTotal();
+    ">Calculate</button>
+    <p class="js-total"></p>
+
+
+
+    <script>
+      function Subscribe() {
+        const subscribeButton = document.querySelector('.js-subscribe-button')
+        if (subscribeButton.innerText === 'Subscribe') {
+          subscribeButton.innerText = 'Subscribed';
+          subscribeButton.classList.add('clicked');
+        } else {
+          subscribeButton.innerText = 'Subscribe';
+          subscribeButton.classList.remove('clicked');
+        }
+      };
+      function calculateTotal() {
+       const inputElement = document.querySelector('.js-cost-input');
+       let cost = Number(inputElement.value);
+       if (cost < 40) {
+        cost = cost + 10
+       }
+
+       document.querySelector('.js-total').innerHTML = `$${cost}`
+      }
+      function handleCostKeyDown(event) {
+        console.log(event.key)
+        if (event.key === 'Enter') {
+          calculateTotal()
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>
+        DOM
+       </title>
+    </head>
+    <body>
+      <button onclick="
+        document.querySelector('.secondbutton')
+          .innerHTML = 'this is a class'
+        ">
+        Hello
+      </button>
+      <button class="secondbutton"
+      onclick="
+      document.querySelector('.secondbutton')
+          .innerHTML = 'two'
+      ">
+        two
+      </button>
+        <script>
+          /*
+          console.log(document.title)
+          document.title = 'Hell'
+          console.log(document.body)
+          console.log(typeof document.body)
+          console.log(document.body.innerHTML)
+          document.body.innerHTML = '<button>PIEEEEE</button>'
+          */
+
+          console.log(document.querySelector('button').innerHTML)
+          document.querySelector('button')
+            .innerHTML = 'This is changed'
+          let buttonElement = document.querySelector('button')
+          buttonElement.innerHTML = 'hehahe'
+          /*
+          document.body.innerHTML = 'hello';
+          document.title = 'this is text';
+          */
+        </script>
+    </body>    
+</html>
