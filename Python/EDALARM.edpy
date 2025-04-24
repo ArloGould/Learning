@@ -1,0 +1,55 @@
+
+#-------------Setup----------------
+
+import Ed
+
+Ed.EdisonVersion = Ed.V2
+Ed.DistanceUnits = Ed.CM
+Ed.Tempo = Ed.TEMPO_MEDIUM
+
+#--------Your code below-----------#
+Ed.ObstacleDetectionBeam(Ed.ON)
+Obstacledetected = False
+while 1!=2:
+    if Ed.ReadObstacleDetection() > Ed.OBSTACLE_NONE:
+        while True:
+            Ed.PlayTone(1000, 1000)
+            Ed.LeftLed(Ed.ON)
+            Ed.RightLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_LEFT, Ed.SPEED_10, 100)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.RightLed(Ed.ON)
+            Ed.LeftLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_RIGHT, Ed.SPEED_10, 100)
+            Ed.PlayTone(2000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.LeftLed(Ed.ON)
+            Ed.RightLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_LEFT, Ed.SPEED_10, 100)
+            Ed.PlayTone(1000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.RightLed(Ed.ON)
+            Ed.LeftLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_RIGHT, Ed.SPEED_10, 100)
+            Ed.PlayTone(2000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.LeftLed(Ed.ON)
+            Ed.RightLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_LEFT, Ed.SPEED_10, 100)
+            Ed.PlayTone(1000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.RightLed(Ed.ON)
+            Ed.LeftLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_RIGHT, Ed.SPEED_10, 100)
+            Ed.PlayTone(2000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.LeftLed(Ed.ON)
+            Ed.RightLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_LEFT, Ed.SPEED_10, 100)
+            Ed.PlayTone(1000, 1000)
+            Ed.TimeWait(1, Ed.TIME_SECONDS)
+            Ed.RightLed(Ed.ON)
+            Ed.LeftLed(Ed.OFF)
+            Ed.Drive(Ed.SPIN_RIGHT, Ed.SPEED_10, 100)
+            Ed.PlayTone(2000, 1000)
+    
